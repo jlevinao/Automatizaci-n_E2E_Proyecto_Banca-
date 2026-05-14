@@ -39,7 +39,19 @@ public class LoginSteps {
         boolean enProductos = loginPage.estaEnPaginaDeProductosPorURL();
 
         assertTrue("No se ingresó a la página de productos", enProductos);
-        driver.quit();
+
+    }
+
+    @And("agrego un producto al carro de compras")
+    public void agrego_un_producto_al_carro_de_compras() {
+    loginPage.clickProducto();
+    }
+
+    @And("reviso el producto agregado en el carro")
+    public void reviso_el_producto_agregado_en_el_carro() {
+     loginPage.carroDeCompras();
+     driver.quit();
+
     }
 }
 
